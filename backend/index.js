@@ -35,11 +35,11 @@ app.use("/api", routes);
 
 // Serve static files from the React app in production
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "..", "client", "build")));
+  app.use(express.static(path.join(__dirname, "..", "client", "dist", "book-register-app", "browser")));
 
   // Handle React routing, return all requests to React app
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "client", "build", "index.html"));
+    res.sendFile(path.join(__dirname, "..", "client", "build", "dist", "book-register-app", "browser","index.html"));
   });
 }
 
