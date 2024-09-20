@@ -5,7 +5,7 @@ const Book = require('../models/book');
 // Get all books (exposing only `name`, `author`, and `isbn` fields to the client)
 router.get('/books', async (req, res) => {
     try {
-        const books = await Book.find({}, 'name author isbn');
+        const books = await Book.find({}, 'name author isbn pages');
         res.status(200).json(books);
     } catch (err) {
         res.status(500).json({ error: err.message });
